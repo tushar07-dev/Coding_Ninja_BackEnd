@@ -1,0 +1,8 @@
+cd.. => goes one step Up in parent directory 
+ls =>  list of  files inside my current folder
+pwd => current working path/ directory
+cd ~/Desktop/ => go to Desktop
+clear =>clear
+mkdir nodews => make a folder with name nodews 
+cd nodews => goin into nodews folder
+rm => remove directory or file
