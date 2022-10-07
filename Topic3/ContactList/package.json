@@ -1,0 +1,14 @@
+{
+  "name": "contactlist",
+  "version": "1.0.0",
+  "description": "Basic Contact list to learn express js as frameWork",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tushar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
