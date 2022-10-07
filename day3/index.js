@@ -9,15 +9,39 @@ function requestHandler(req, res) {
    
     res.writeHead(200, {'content-type': 'text/html'});
 
-    fs.readFile('./index.html' , function(err, data){
-        if(err){
-            console.log("Error:", err);
-            return res.end(`<h1> Error! </h1>`);
-        }
-        return res.end(data);
-    })
+    // fs.readFile('./index.html' , function(err, data){
+    //     if(err){
+    //         console.log("Error:", err);
+    //         return res.end(`<h1> Error! </h1>`);
+    //     }
+    //     return res.end(data);
+    // })
 
     // res.end( `<h1>YOur  Responce is  recived ! </h1>`)
+
+        let filePath;
+
+        switch (req.url){
+            case '/' :   filePath = './index.html'
+            break;
+
+            case '/profile' : filePath = './profile.html'
+            break;
+            
+            case '/form' : filePath = './form.html'
+            break;
+
+            default : filePath = './404.html'
+            break;
+        }
+
+        fs.readFile(filePath,  function(err, data){
+            if(err){
+                console.log(err);
+                return res.end('<h1>Error!<h1>');
+            }
+            return res.end(data);
+        })
 }
 
 const server = http.createServer(requestHandler);

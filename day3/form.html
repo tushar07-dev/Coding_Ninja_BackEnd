@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <style>
+       body {
+  margin: 20px auto;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+form, p {
+  margin: 20px;
+}
+
+p.note {
+  font-size: 1rem;
+  color: red;
+}
+
+
+
+input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+  padding: 4px;
+  margin-bottom: 20px;
+  font-family: 'Lato';
+  width: 300px;
+  background-color: lightskyblue
+}
+
+label {
+  width: 250px;
+  display: inline-block;
+}
+    </style>
+  </head>
+  <body> 
+    <h3>StackOver Employee Data Form </h3>   
+    <p class="note">Fields marked with * are required.</p>
+      <form>
+        <label for="name">Name: *</label>
+        <input type="text" id="name" name="name" >
+        <br>
+
+        <label for="name">Phone Number: *</label>
+        <input type="text" id="phone" name="phone" maxlength="11">
+        <br>
+
+        <label for="name">Social Security #: *</label>
+        <input type="text" id="social" name="social" pattern="" minlength="10"  maxlength="10" >
+        <br>
+
+        <label for="name">Company Email Address: *</label>
+        <input type="email" id="email" name="email"  >
+        <br>
+
+        <label for="name">Age: </label>
+        <input type="number" id="age" name="age" min="10" max="80">
+        <br>
+
+        <label for="name">ZipCode: * </label>
+        <input type="number" id="zip" name="zip" maxlength="9" >
+        <br>
+        
+        <input type="submit" value="Submit" />
+      <input type="reset" value="Clear"/> 
+    </form>
+  </body>
+</html>
+
