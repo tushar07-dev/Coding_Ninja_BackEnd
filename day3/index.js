@@ -1,10 +1,19 @@
 const http = require('http');
 const port = 8000;
 
+
+
 function requestHandler(req, res) {
     console.log(req.url);
-    
-    res.end("YOur Req recived")
+    // *    returning HTML /PDF filetype for different URL req different html files
+    // * Responce code : if we getting sucess or not found or error to show it is 200/404/424;
+    // * {'contest-type' : 'text/html'};
+
+    // in Header we tell what is comming on / wht type of content is coming on &
+    //  any additional hidden information that you want to send
+    // Server to Browser.
+
+    res.end( `<h1>YOur  Responce is  recived ! </h1>`)
 }
 
 const server = http.createServer(requestHandler);
