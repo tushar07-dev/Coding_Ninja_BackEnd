@@ -3,17 +3,28 @@
         <title>
             <%= locals.title %>
         </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="/css/Home.css" />
     </head>
 
     <body>
-        <h1>Contact List</h1>
+        <h1 id="page-heading">
+            <i class="fas fa-address-book"></i> Contact List</h1>
 
-        <div>
+        <div id="contacts-list-container">
             <ul>
                 <% for(let i of contact_list) { %>
-                    <li>
-                        <h3><%= i.name %></h3>
-                        <%= i.phone %>
+                    <li class="contact">
+                        <div class="details">
+                            <h3><%= i.name %></h3>
+                            <h3><%= i.phone %></h3>
+                        </div>
+                        <div class="delete-btn">
+                            <a href="">
+                                <i class="fas fa-window-close"></i>
+                            </a>
+                        </div>
                     </li>
                     <% } %>
             </ul>
@@ -21,10 +32,12 @@
         
 
         <form action="/create-contact" method="POST">
-            <input type="text" name="name" placeholder="Enter name" required />
-            <input type="number" name="phone" placeholder="Enter number" required />
+            <input class="form-input" type="text" name="name" placeholder="Enter name" required />
+            <input class="form-input" type="number" name="phone" placeholder="Enter number" required />
 
-            <button type="submit" >ADD CONTACT</button>
+            <button class="form-input form-btn" type="submit" >ADD</button>
         </form>
+
+        <script type="text/javascript" src="/js/Home.js"></script>
     </body>
 </html>
