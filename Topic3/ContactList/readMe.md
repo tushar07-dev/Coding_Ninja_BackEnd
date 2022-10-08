@@ -68,3 +68,19 @@ Locals is an global object, your responce also an object with different keys ,
 one of these key is Local , when i pass local.title in(file);
 the whole title stored in,Local in object => locals : { title: "My Contacts List"}
 this local is available globally to me.
+
+
+# Create Contact List
+create var contactList array of obj, with name & phone.
+
+and pass this data dynamically to home.ejs (Template engine) with and by for loop show it to Browser.
+
+# Sending data to server :
+step1 : create for (from where we can take data from user)
+step2 :getting that data reading it and adding to the list.
+
+## Create a form : step1
+in home.ejs created Form => input tag for phone, name & Submit.
+on sub,it an obj of key name&phone will go to '/create-content' page & retuen statements redirect us to another url '/practice'
+
+# Parse from data : step2
