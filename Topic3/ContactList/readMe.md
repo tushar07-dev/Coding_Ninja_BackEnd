@@ -84,3 +84,56 @@ in home.ejs created Form => input tag for phone, name & Submit.
 on sub,it an obj of key name&phone will go to '/create-content' page & retuen statements redirect us to another url '/practice'
 
 # Parse from data : step2
+Now data is sended to server but  data is encoded and in form of stringto decode i need a parser 'body-parser'
+parse => take data from browser => parser has req obj => req :{body :{name"arpan", phone:"123"},}
+
+below app.set('view engine' , 'ejs') , write => app.use(express.urlencoded())
+
+in POST req push req.body.name/phone in contactList and redirect to Home.ejs page
+till now we have all data in store in ram when server get killed data vanish because we didnt use dataBase till now
+
+# MiddleWear : 
+It is function which also has access to your req&resp ; and it manipulate that req data and pass it on to next or retuen error to itself.
+NEED OF MiddleWear:
+for some preProcess like when form submitting the data, convert it to KEY Value pairs, Which was encoded 
+e.g [ app.use(express.urlencoded());]
+
+# Lets make our own middleware which console something :
+//! Custome-Middlewear1 :
+app.use(function(req, res, next){
+    console.log('Middleware 01 called');
+    next()
+})
+next() => pass function to next middlewar,If there is no another middleware then next pass it to controller
+
+# OR bass dat ain chair format
+//! Custome-Middlewear1 :
+app.use(function(req, res, next){
+    req.myName =  'TUshar';
+    next()
+})
+//! Custome-Middlewear 2 :
+app.use(function(req, res, next){
+    console.log("My name from MW-2",req.myName)
+    next()
+})
+// ! CONTROLLER (C) :
+app.get('/' , function(req, res){
+    console.log("My name from Get Route controller",req.myName)
+    return res.render('home' , {
+                    title: 'My Contacts List ',
+                    contact_list : contactList
+                })       
+});
+
+
+# Assesing static files(css/images..) BY Middlewear 
+app.use(express.static('assets'));
+create root folder name assets => Folder css=>Home.css / Folder js=>Home.js
+now you can acess js & Css from anywhere
+
+
+# Delect Contact :
+there two ways to find and delect contact information are 
+1] param : /delect-contact/10
+2] query-param : /delect-contact/?phone='123456789'

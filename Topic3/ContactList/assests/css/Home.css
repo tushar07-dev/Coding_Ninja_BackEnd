@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+    font-family: sans-serif;
+    background-color: salmon;
+    margin: 0 ;
+}
+
+
+#page-heading{
+    text-align: center;
+    margin-top: 25px;
+    color: gray;
+}
+
+.form-input{
+    border: 0px;
+    background-color: salmon;
+
+    border-bottom: black solid 1px; 
+}
+
+.form-btn{
+    background-color: blue;
+    color: white;
+}
+
+#contacts-list-container{
+    width:500px;
+    margin :auto;
+    text-align: center;
+}
+.details{
+    display: flex;
+    background-color: blue;
+    margin-top: 2px;
+    justify-content: space-between;
+}
+
+.details:hover{
+    background-color: skyblue;
+    opacity: 0.9;
+}
