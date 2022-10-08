@@ -6,6 +6,25 @@
     </head>
 
     <body>
-        <h1>Rendered EJS, HOme page !</h1>
+        <h1>Contact List</h1>
+
+        <div>
+            <ul>
+                <% for(let i of contact_list) { %>
+                    <li>
+                        <h3><%= i.name %></h3>
+                        <%= i.phone %>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+        
+
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" placeholder="Enter name" required />
+            <input type="number" name="phone" placeholder="Enter number" required />
+
+            <button type="submit" >ADD CONTACT</button>
+        </form>
     </body>
 </html>
