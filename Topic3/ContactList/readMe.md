@@ -137,3 +137,24 @@ now you can acess js & Css from anywhere
 there two ways to find and delect contact information are 
 1] param : /delect-contact/10
 2] query-param : /delect-contact/?phone='123456789'
+
+app.get('/delete-contact/:phone' , function(req, res) {
+    console.log(req.params);
+    let phone = req.params.phone
+})
+
+//in css file :
+1] Done by Params
+                            <a href="/delete-contact/<%= i.phone %>" >
+                                <i class="fas fa-window-close"></i>
+                            </a>
+
+2] Query : 
+                            <a href="/delete-contact/?phone=<%= i.phone %>&name=<%= i.name %>" >
+                                <i class="fas fa-window-close"></i>
+                            </a>
+
+
+# DElete :
+Now i have phone = req.params.phone ; => { phone: '5555' }
+finding contactIndex of same Kry value in Object of array. and remove it by slice(contactIndex,1)

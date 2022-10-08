@@ -29,14 +29,35 @@ body{
     margin :auto;
     text-align: center;
 }
-.details{
+.contact .details{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-color: blue;
     margin-top: 2px;
+    width: 90%;
     justify-content: space-between;
 }
 
+.contact{
+    padding: 3px 10px;
+    border: 1px solid white;
+    background-color: blue;
+    color: white;
+    display: flex;
+}
 .details:hover{
     background-color: skyblue;
     opacity: 0.9;
+}
+
+.contact .delete-button{
+    width: 10%;
+    color: white;
+    margin: auto;
+}
+
+.contact .delete-button a{
+    color: white;
+    background-color: red;
 }
